@@ -22,11 +22,9 @@
       <button onclick="addTask()">Add Task</button>
     </div>
 
-    <div class="filters">
-  <button onclick="filterTasks('all')">All</button>
-  <button onclick="filterTasks('done')">Done</button>
-  <button onclick="filterTasks('pending')">Pending</button>
-</div>
+    <div class="input-section"> 
+      <input type="text" id="taskInput" placeholder="Enter a task..."> 
+      <button id="addBtn">Add</button> </div>
     <ul id="taskList"></ul>
     <p id="taskCount">0 tasks</p>
   </div>
