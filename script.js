@@ -179,3 +179,39 @@ function renderTasks() {
 
 /* LOAD TASKS ON PAGE LOAD */
 renderTasks();
+function renderCalendar() {
+  const calendar = document.getElementById("calendar");
+  calendar.innerHTML = "";
+
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth();
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    calendar.innerHTML += `<div></div>`;
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+
+    const dayTasks = tasks.filter(t => t.date === dateStr);
+
+    let dots = "";
+    dayTasks.forEach(() => {
+      dots += `<div class="task-dot"></div>`;
+    });
+
+    calendar.innerHTML += `
+      <div class="day">
+        <strong>${day}</strong>
+        ${dots}
+      </div>
+    `;
+  }
+}
+
+/* CALL IT */
+renderCalendar();
