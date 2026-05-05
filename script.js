@@ -1,21 +1,37 @@
-const taskCount = document.getElementById("taskCount");
-const input = document.getElementById("taskInput");
-const button = document.getElementById("addBtn");
-const list = document.getElementById("taskList");
-
 // Load tasks when page opens
 window.addEventListener("load", loadTasks);
 
 button.addEventListener("click", addTask);
 
+let tasks = [];
+
 function addTask() {
-  const taskText = input.value.trim();
+const dateinput = document.getElementById("dateinput");
+const taskDate = dateInput.value || "No date";  
+const taskCount = document.getElementById("taskCount");
+const input = document.getElementById("taskInput");
+const button = document.getElementById("addBtn");
+const list = document.getElementById("taskList");
+const taskText = input.value.trim();
+  
   if (taskText === "") return;
 
   createTaskElement(taskText);
   saveTask(taskText);
 
-  input.value = "";
+  const task = {
+    id: Date.now(),
+    text: taskText,
+    date: taskDate,
+    done: false
+  };
+  
+  tasks.push(task);
+
+  taskInput.value = "";
+  dateInput.value = "";
+
+  renderTask();
 }
 
 function createTaskElement(taskText, isDone = false) {
@@ -122,3 +138,38 @@ themeToggle.addEventListener("click", () => {
     themeToggle.textContent = "🌙";
   }
 });
+function toggleDone(id) {
+  tasks = tasks.map(task =>
+    task.id === id ? { ...task, done: !task.done } : task
+  );
+  renderTasks();
+}
+
+function deleteTask(id) {
+  tasks = tasks.filter(task => task.id !== id);
+  renderTasks();
+}
+
+function renderTasks() {
+  const list = document.getElementById("taskList");
+  list.innerHTML = "";
+
+  tasks.forEach(task => {
+    const div = document.createElement("div");
+    div.className = "task" + (task.done ? " done" : "");
+
+    div.innerHTML = `
+      <div>
+        <div class="text">${task.text}</div>
+        <small>📅 ${task.date}</small>
+      </div>
+
+      <div class="actions">
+        <button onclick="toggleDone(${task.id})">✓</button>
+        <button onclick="deleteTask(${task.id})">✕</button>
+      </div>
+    `;
+
+    list.appendChild(div);
+  });
+}
