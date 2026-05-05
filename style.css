@@ -121,3 +121,30 @@ li {
 li:hover {
   transform: scale(1.02);
 }
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.day {
+  background: #2a2a40;
+  padding: 15px;
+  border-radius: 8px;
+  min-height: 80px;
+  font-size: 12px;
+}
+
+.day strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.task-dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  margin-top: 3px;
+}
