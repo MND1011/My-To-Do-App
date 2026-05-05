@@ -1,6 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   background: #1e1e2f;
+  margin: 0;
+  padding: 0;
   color: white;
   display: flex;
   justify-content: center;
@@ -16,12 +18,15 @@ body.light {
 
 .container {
   background: #2c2c3e;
+  margin: 80px auto;
+  text-align: center;
   padding: 20px;
   border-radius: 10px;
-  width: 300px;
+  max-width: 700px;
 }
 
 h1 {
+  margin-bottom: 30px;
   text-align: center;
 }
 
@@ -30,33 +35,52 @@ h1 {
   gap: 10px;
 }
 
+.card {
+  background: #2a2a40;
+  padding: 25px; /* MORE SPACE */
+  border-radius: 15px;
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* SPACE BETWEEN ELEMENTS */
+}
+
 input {
   flex: 1;
-  padding: 8px;
-  border-radius: 5px;
+  padding: 12px;
+  border-radius: 8px;
   border: none;
+  font-size: 16px;
 }
 
 button {
-  padding: 8px 12px;
+  padding: 12px;
   border: none;
   background: #4caf50;
   color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #16a34a;
 }
 
 li {
   margin-top: 10px;
   background: #3a3a50;
-  padding: 8px;
-  border-radius: 5px;
+  padding: 15px;
+  border-radius: 10px;
   cursor: pointer;
+  margin-bttom: 12px;
 }
 
 li.done {
   text-decoration: line-through;
   opacity: 0.6;
+  color: gray;
 }
 li {
   display: flex;
