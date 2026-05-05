@@ -215,3 +215,6 @@ function renderCalendar() {
 
 /* CALL IT */
 renderCalendar();
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
