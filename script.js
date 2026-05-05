@@ -3,7 +3,7 @@ window.addEventListener("load", loadTasks);
 
 button.addEventListener("click", addTask);
 
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function addTask() {
 const dateinput = document.getElementById("dateinput");
@@ -27,6 +27,7 @@ const taskText = input.value.trim();
   };
   
   tasks.push(task);
+  saveTasks();
 
   taskInput.value = "";
   dateInput.value = "";
@@ -142,11 +143,13 @@ function toggleDone(id) {
   tasks = tasks.map(task =>
     task.id === id ? { ...task, done: !task.done } : task
   );
+  saveTasks();
   renderTasks();
 }
 
 function deleteTask(id) {
   tasks = tasks.filter(task => task.id !== id);
+  saveTasks();
   renderTasks();
 }
 
@@ -173,3 +176,6 @@ function renderTasks() {
     list.appendChild(div);
   });
 }
+
+/* LOAD TASKS ON PAGE LOAD */
+renderTasks();
