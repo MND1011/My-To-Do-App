@@ -1,8 +1,9 @@
 const images = [
-  "images/starting-work.png",
+  "images/stating work.png",
   "images/reminder.png",
-  "images/plan-mode.png",
-  "images/modern-life.png"
+  "images/focused.png",
+  "images/plan mode.png",
+  "images/modern life.png"
 ];
 
 let index = 0;
