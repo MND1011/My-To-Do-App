@@ -20,11 +20,11 @@ const taskText = input.value.trim();
   saveTask(taskText);
 
   let images = [
-  "images/modern life.jpg",
-  "images/focused.jpg",
-  "images/plan mode.jpg",
-  "images/planning.jpg",
-  "images/confident.jpg"
+  "images/modern life.svg",
+  "images/focused.svg",
+  "images/plan mode.svg",
+  "images/planning.svg",
+  "images/confident.svg"
 ];
 
 let index = 0;
