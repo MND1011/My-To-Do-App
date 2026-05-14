@@ -26,13 +26,21 @@ body {
 
 .nav-links{
   display:flex;
-  gap:20px;
+  gap:40px;
 }
 
-.nav-links{
-  display:flex;
-  gap:20px;
+.nav-links a{
+  color:#4CAF50;
+  text-decoration:none;
+  font-size:28px;
+  font-weight:bold;
+  transition:0.3s;
 }
+
+.nav-links a:hover{
+  color:#7CFF7C;
+}
+
 .calendar-label {
     display: none;
 }
@@ -46,7 +54,12 @@ body.light {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:80px;
+  padding:60px 100px;
+}
+
+.hero-image img{
+  width:500px;
+  border-radius:20px;
 }
 
 .hero-text{
