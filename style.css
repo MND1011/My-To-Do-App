@@ -13,9 +13,15 @@ body {
 
 .navbar{
   display:flex;
-  justify-content:space-between;
+  flex-direction:column;
   align-items:center;
-  padding:20px 60px;
+  padding-top: 30px;
+}
+
+.navbar h1{
+  font-size:65px;
+  color:white;
+  margin-bottom:20px;
 }
 
 .nav-links{
