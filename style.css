@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #1e1e2f;
+  background: #16162b;
   margin: 0;
   padding: 0;
   color: white;
@@ -9,6 +9,23 @@ body {
   align-items: center;
   height: 100vh;
   transition: 0.3s;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
 }
 .calendar-label {
     display: none;
@@ -19,6 +36,60 @@ body.light {
   color: #222;
 }
 
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:80px;
+}
+
+.hero-text{
+  width:50%;
+}
+
+.hero-text h2{
+  font-size:60px;
+}
+
+.hero-text button{
+  background:#4CAF50;
+  color:white;
+  border:none;
+  padding:15px 25px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.hero-image img{
+  width:450px;
+  border-radius:20px;
+}
+
+.auth-container{
+  width:350px;
+  margin:100px auto;
+  background:#262645;
+  padding:40px;
+  border-radius:20px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.auth-container input{
+  padding:15px;
+  border-radius:10px;
+  border:none;
+}
+
+.auth-container button{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#4CAF50;
+  color:white;
+  cursor:pointer;
+}
 .container {
   background: #2c2c3e;
   margin: 100px auto;
