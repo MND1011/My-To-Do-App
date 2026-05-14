@@ -19,6 +19,34 @@ const taskText = input.value.trim();
   createTaskElement(taskText);
   saveTask(taskText);
 
+  let images = [
+  "images/img1.jpg",
+  "images/img2.jpg",
+  "images/img3.jpg"
+];
+
+let index = 0;
+
+function showImage() {
+  document.getElementById("sliderImage").src = images[index];
+}
+
+function nextImage() {
+  index++;
+
+  // stop after last image
+  if (index >= images.length) {
+    clearInterval(slideInterval); // stops slideshow
+    return;
+  }
+
+  showImage();
+}
+
+// start slideshow
+showImage();
+let slideInterval = setInterval(nextImage, 3000);
+
   const task = {
     id: Date.now(),
     text: taskText,
