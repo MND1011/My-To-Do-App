@@ -1,15 +1,27 @@
 const images = [
-  "images/slide1.png",
-  "images/slide2.png",
-  "images/slide3.png"
+  "images/starting-work.png",
+  "images/reminder.png",
+  "images/plan-mode.png",
+  "images/modern-life.png"
 ];
 
 let index = 0;
 
-setInterval(() => {
+const slideImage = document.getElementById("slideImage");
 
-  index = (index + 1) % images.length;
+slideImage.src = images[index];
 
-  document.getElementById("slideImage").src = images[index];
+const slider = setInterval(() => {
+
+  index++;
+
+  if(index >= images.length){
+
+    clearInterval(slider);
+
+    return;
+  }
+
+  slideImage.src = images[index];
 
 }, 3000);
