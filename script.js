@@ -23,7 +23,7 @@ const taskText = input.value.trim();
   "images/modern life.svg",
   "images/focused.svg",
   "images/plan mode.svg",
-  "images/planning.svg",
+  "images/stating.svg",
   "images/confident.svg"
 ];
 
